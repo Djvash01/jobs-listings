@@ -1,5 +1,7 @@
 <div class="home">
-  <app-card>
-    {{ jobs | async | json }}
-  </app-card>
+  <ng-container *ngIf="(jobs$ | async) as jobs">
+    <ng-container *ngFor="let job of jobs; trackBy:jobTrackBy">
+      <app-job [job]="job"></app-job>
+    </ng-container>
+  </ng-container>
 </div>

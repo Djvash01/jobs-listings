@@ -11,13 +11,15 @@ import { Observable } from 'rxjs';
 })
 export class HomeComponent {
 
-  public square = ChipType.SQUARE;
-  public rounded = ChipType.ROUNDED;
   private urlData = 'assets/mocks/data.json';
-  public jobs: Observable<Job[]>;
+  public jobs$: Observable<Job[]>;
 
   constructor(private readonly request: RequestService){
-    this.jobs = this.request.get<Job[]>(this.urlData);
+    this.jobs$ = this.request.get<Job[]>(this.urlData);
+  }
+
+  public jobTrackBy(index: number, job: Job): number {
+    return job.id;
   }
 
 }

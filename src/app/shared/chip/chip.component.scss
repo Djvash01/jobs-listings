@@ -19,14 +19,14 @@
   }
 
   &--square {
-    border-radius: 8px;
+    border-radius: 5px;
   }
 
   &__background {
     &--primary-2 {
       background-color: $color-primary-2;
       &:hover {
-        background-color: rgba($color-primary-2, 0.5);
+        background-color: $color-primary-1;
       }
     }
     &--primary-1 {
@@ -52,6 +52,9 @@
   &__color {
     &--primary-1 {
       color: $color-primary-1;
+      &:hover {
+        color: $color-white;
+      }
     }
     &--black {
       color: $color-black;

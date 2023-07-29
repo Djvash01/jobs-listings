@@ -1,0 +1,36 @@
+<app-card>
+  <div class="job">
+    <img class="job__logo" [src]="job.logo" alt="company logo" />
+    <div class="job__description">
+      <div class="company">
+        <span>{{ job.company | titlecase }}</span>
+        <app-chip
+          *ngIf="job.new"
+          [type]="rounded"
+          color="white"
+          background="primary-1"
+        > NEW!
+        </app-chip>
+        <app-chip
+          *ngIf="job.new"
+          [type]="rounded"
+          color="white"
+          background="black"
+        > FEATURED
+        </app-chip>
+      </div>
+      <span class="job__position">{{ job.position | titlecase }}</span>
+      <span class="job__details">{{ job.postedAt }} &#x2022; {{ job.contract }} &#x2022; {{ job.location }}</span>
+    </div>
+    <div class="job__skills">
+      <app-chip [showPointer]="true">{{ job.role }}</app-chip>
+      <app-chip [showPointer]="true">{{ job.level }}</app-chip>
+      <app-chip [showPointer]="true" *ngFor="let language of job.languages">
+        {{ language }}
+      </app-chip>
+      <app-chip [showPointer]="true" *ngFor="let tool of job.tools">
+        {{ tool }}
+      </app-chip>
+    </div>
+  </div>
+</app-card>
