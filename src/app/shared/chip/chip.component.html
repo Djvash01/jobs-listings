@@ -1,0 +1,9 @@
+<button class="chip chip__color--{{color}} chip__background--{{background}}"
+  [ngClass]="{
+    'chip--square': square === type,
+    'chip--rounded': rounded === type,
+    'chip--click': showPointer,
+  }"
+  >
+  <ng-content></ng-content>
+</button>

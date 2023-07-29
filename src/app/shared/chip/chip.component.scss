@@ -1,0 +1,63 @@
+@import 'colors/colors';
+@import 'fonts/font';
+
+.chip {
+
+  padding: 5px 10px;
+  width: fit-content;
+  font-weight: $font-bold;
+  font-size: 1em;
+  outline: none;
+  border: none;
+
+  &--click {
+    cursor: pointer;
+  }
+
+  &--rounded {
+    border-radius: 20px;
+  }
+
+  &--square {
+    border-radius: 8px;
+  }
+
+  &__background {
+    &--primary-2 {
+      background-color: $color-primary-2;
+      &:hover {
+        background-color: rgba($color-primary-2, 0.5);
+      }
+    }
+    &--primary-1 {
+      background-color: $color-primary-1;
+      &:hover {
+        background-color: rgba($color-primary-1, 0.5);
+      }
+    }
+    &--black {
+      background-color: $color-black;
+      &:hover {
+        background-color: rgba($color-black, 0.5);
+      }
+    }
+    &--white {
+      background-color: $color-white;
+      &:hover {
+        background-color: rgba($color-white, 0.5);
+      }
+    }
+  }
+
+  &__color {
+    &--primary-1 {
+      color: $color-primary-1;
+    }
+    &--black {
+      color: $color-black;
+    }
+    &--white {
+      color: $color-white;
+    }
+  }
+}
