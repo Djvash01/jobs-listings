@@ -1,0 +1,15 @@
+@import 'mixins/mixins';
+@import 'colors/colors';
+
+.header {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('../../../assets/images/bg-header-mobile.svg');
+  background-color: $color-primary-1;
+  
+  @include desktop {
+    background-image: url('../../../assets/images/bg-header-desktop.svg');
+  }
+}
