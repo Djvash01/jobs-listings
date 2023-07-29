@@ -1,6 +1,5 @@
-<div style="padding: 10%">
+<div class="home">
   <app-card>
-    <app-filter-option [value]="'Javascript'">
-    </app-filter-option>
+    {{ jobs | async | json }}
   </app-card>
 </div>
