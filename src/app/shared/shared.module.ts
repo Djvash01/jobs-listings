@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { CardComponent } from './card/card.component';
 import { ChipComponent } from './chip/chip.component';
+import { FilterOptionComponent } from './filter-option/filter-option.component';
 
 
 
@@ -10,7 +11,8 @@ import { ChipComponent } from './chip/chip.component';
   declarations: [
     HeaderComponent,
     CardComponent,
-    ChipComponent
+    ChipComponent,
+    FilterOptionComponent
   ],
   imports: [
     CommonModule
@@ -18,7 +20,8 @@ import { ChipComponent } from './chip/chip.component';
   exports: [
     HeaderComponent,
     CardComponent,
-    ChipComponent
+    ChipComponent,
+    FilterOptionComponent
   ]
 })
 export class SharedModule { }
