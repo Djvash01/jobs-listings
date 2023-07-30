@@ -2,16 +2,19 @@
   <app-card *ngIf="!isEmptyFilters">
     <div class="filters">
       <div class="filters__options">
-        <app-filter-option *ngFor="let roleOption of filters[role]" [value]="roleOption"></app-filter-option>
-        <app-filter-option *ngFor="let levelOption of filters[level]" [value]="levelOption"></app-filter-option>
-        <app-filter-option *ngFor="let toolOption of filters[tools]" [value]="toolOption"></app-filter-option>
-        <app-filter-option *ngFor="let languageOption of filters[languages]" [value]="languageOption"></app-filter-option>
+        <ng-container *ngFor="let category of categories">
+          <app-filter-option
+            *ngFor="let value of filters[category]"
+            [value]="value"
+            (remove)="removeFilter({ category, value })"
+          ></app-filter-option>
+        </ng-container>
       </div>
-      <a class="filters__clear">Clear</a>
+      <a class="filters__clear" (click)="clearFilters()">Clear</a>
     </div>
   </app-card>
-  <ng-container *ngIf="(jobs$ | async) as jobs">
-    <ng-container *ngFor="let job of jobs; trackBy:jobTrackBy">
+  <ng-container *ngIf="!!filteredJobs.length">
+    <ng-container *ngFor="let job of filteredJobs; trackBy: jobTrackBy">
       <app-job [job]="job" (filter)="addFilter($event)"></app-job>
     </ng-container>
   </ng-container>
