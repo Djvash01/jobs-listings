@@ -1,9 +1,10 @@
 <app-card>
-  <div class="job">
+  <div class="job"
+    [class.job--featured]="job.featured">
     <img class="job__logo" [src]="job.logo" alt="company logo" />
     <div class="job__description">
       <div class="company">
-        <span>{{ job.company | titlecase }}</span>
+        <span class="company__name">{{ job.company | titlecase }}</span>
         <app-chip
           *ngIf="job.new"
           [type]="rounded"
@@ -12,7 +13,7 @@
         > NEW!
         </app-chip>
         <app-chip
-          *ngIf="job.new"
+          *ngIf="job.featured"
           [type]="rounded"
           color="white"
           background="black"
