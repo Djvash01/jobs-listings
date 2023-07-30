@@ -24,12 +24,12 @@
       <span class="job__details">{{ job.postedAt }} &#x2022; {{ job.contract }} &#x2022; {{ job.location }}</span>
     </div>
     <div class="job__skills">
-      <app-chip [showPointer]="true">{{ job.role }}</app-chip>
-      <app-chip [showPointer]="true">{{ job.level }}</app-chip>
-      <app-chip [showPointer]="true" *ngFor="let language of job.languages">
+      <app-chip [showPointer]="true" (click)="emitFilter({category: role, value: job.role})">{{ job.role }}</app-chip>
+      <app-chip [showPointer]="true" (click)="emitFilter({category: level, value: job.level})">{{ job.level }}</app-chip>
+      <app-chip [showPointer]="true" (click)="emitFilter({category: languages, value: language})" *ngFor="let language of job.languages">
         {{ language }}
       </app-chip>
-      <app-chip [showPointer]="true" *ngFor="let tool of job.tools">
+      <app-chip [showPointer]="true" *ngFor="let tool of job.tools" (click)="emitFilter({category: tools, value: tool})">
         {{ tool }}
       </app-chip>
     </div>

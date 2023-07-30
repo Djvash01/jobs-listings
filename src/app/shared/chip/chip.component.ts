@@ -6,7 +6,7 @@ import { ChipType } from './chip-type.enum';
   templateUrl: './chip.component.html',
   styleUrls: ['./chip.component.scss']
 })
-export class ChipComponent implements OnInit{
+export class ChipComponent {
 
   @Input() public color: string = 'primary-1';
   @Input() public background: string = 'primary-2';
@@ -16,9 +16,5 @@ export class ChipComponent implements OnInit{
 
   public square = ChipType.SQUARE;
   public rounded = ChipType.ROUNDED;
-
-  public ngOnInit(): void {
-
-  }
 
 }

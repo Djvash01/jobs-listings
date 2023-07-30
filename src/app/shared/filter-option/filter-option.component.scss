@@ -1,19 +1,27 @@
 @import 'colors/colors';
 @import 'fonts/font';
+@import 'mixins/mixins';
 
 .filter-option {
   display: inline-flex;
   background-color: $color-primary-2;
   color: $color-primary-1;
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: $font-medium;
   align-items: center;
   justify-content: center;
   border-radius: 8px;
 
+  @include desktop {
+    font-size: 1.2em;
+  }
+
   &__text {
-    padding: 10px;
+    padding: 7px;
     width: fit-content;
+    @include desktop {
+      padding: 10px;
+    }
   }
 
   &__icon {
@@ -22,10 +30,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    width: 28px;
+    height: 28px;
     border-bottom-right-radius: 8px;
     border-top-right-radius: 8px;
+    @include desktop {
+      width: 40px;
+      height: 40px;
+    }
     &:hover {
       background-color: rgba($color-black, 0.8);
     }

@@ -1,6 +1,32 @@
+@import 'colors/colors';
+@import 'fonts/font';
+@import 'mixins/mixins';
+
 .home {
   padding: 10%;
   gap: 50px;
   display: flex;
   flex-direction: column;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  justify-content: space-between;
+
+  &__options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  &__clear {
+    font-size: 1em;
+    color: $color-primary-1;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
